@@ -11,6 +11,6 @@
 
 @interface QuestionLibrary : NSObject
 
-@property (readonly, nonatomic) NSArray *questions;
+@property (strong, nonatomic) NSArray *questions;
 
 @end
