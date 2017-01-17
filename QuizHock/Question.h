@@ -19,5 +19,6 @@
                  andFalseAnswers:(NSArray*)falseAnswers;
 
 -(NSArray*)getAllAnswers;
+-(BOOL)checkGuess:(NSString*)guess;
 
 @end

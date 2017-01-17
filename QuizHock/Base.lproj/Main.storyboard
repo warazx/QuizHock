@@ -60,6 +60,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Välkommen!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXN-2V-12E">
+                                <rect key="frame" x="16" y="28" width="288" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6p-iv-52d">
+                                <rect key="frame" x="110" y="166" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue?"/>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVg-Aq-JZB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -68,6 +83,8 @@
                         <outlet property="answer2" destination="6cj-pb-m2K" id="tEH-Tj-Gyq"/>
                         <outlet property="answer3" destination="MNb-CS-w4S" id="tdO-ag-UDp"/>
                         <outlet property="answer4" destination="Hi4-Sc-gYx" id="trP-46-OjF"/>
+                        <outlet property="continueBtn" destination="D6p-iv-52d" id="DbP-71-Vq3"/>
+                        <outlet property="infoLabel" destination="dXN-2V-12E" id="DKk-6a-xOR"/>
                         <outlet property="questionLabel" destination="nRf-Jz-yYT" id="nZE-PP-SjO"/>
                     </connections>
                 </viewController>

@@ -26,4 +26,8 @@
     return [@[self.answer, [self.falseAnswers objectAtIndex:0], [self.falseAnswers objectAtIndex:1], [self.falseAnswers objectAtIndex:2]] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 
+-(BOOL)checkGuess:(NSString*)guess {
+    return [guess isEqualToString:self.answer];
+}
+
 @end
