@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) QuestionLibrary *library;
+@property (strong, nonatomic) Question *currentQuestion;
 
 @end
 
@@ -22,19 +23,29 @@
     [self generateQuestion];
 }
 
+- (IBAction)summitAnswer:(UIButton *)sender {
+    if([sender.titleLabel.text isEqualToString:self.currentQuestion.answer]) {
+        NSLog(@"Rätt svar!");
+    } else {
+        NSLog(@"Fel svar...");
+    }
+    [self generateQuestion];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (void)generateQuestion {
-    Question *question = [self.library.questions objectAtIndex:1];
-    self.questionLabel.text = question.question;
+    self.currentQuestion = self.library.getRandomQuestion;
+    self.questionLabel.text = self.currentQuestion.question;
     
-    [self.answer1 setTitle:question.answer forState:UIControlStateNormal];
-    [self.answer2 setTitle:[question.falseAnswers objectAtIndex:0] forState:UIControlStateNormal];
-    [self.answer3 setTitle:[question.falseAnswers objectAtIndex:1] forState:UIControlStateNormal];
-    [self.answer4 setTitle:[question.falseAnswers objectAtIndex:2] forState:UIControlStateNormal];
+    NSArray *answers = [self.currentQuestion getAllAnswers];
+    
+    [self.answer1 setTitle:[answers objectAtIndex:0] forState:UIControlStateNormal];
+    [self.answer2 setTitle:[answers objectAtIndex:1] forState:UIControlStateNormal];
+    [self.answer3 setTitle:[answers objectAtIndex:2] forState:UIControlStateNormal];
+    [self.answer4 setTitle:[answers objectAtIndex:3] forState:UIControlStateNormal];
 }
 
 

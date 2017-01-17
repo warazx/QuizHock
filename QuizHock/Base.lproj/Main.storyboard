@@ -25,21 +25,33 @@
                                 <rect key="frame" x="16" y="289" width="144" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer1"/>
+                                <connections>
+                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6SN-QF-m3R"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cj-pb-m2K">
                                 <rect key="frame" x="160" y="289" width="144" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer2"/>
+                                <connections>
+                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bC2-ex-5PN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-CS-w4S">
                                 <rect key="frame" x="16" y="353" width="144" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer3"/>
+                                <connections>
+                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdk-JR-aLH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi4-Sc-gYx">
                                 <rect key="frame" x="160" y="353" width="144" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer4"/>
+                                <connections>
+                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1B-AW-wk2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRf-Jz-yYT">
                                 <rect key="frame" x="16" y="166" width="288" height="115"/>

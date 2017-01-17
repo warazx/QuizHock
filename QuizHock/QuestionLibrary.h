@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) NSArray *questions;
 
+-(Question*)getRandomQuestion;
+
 @end

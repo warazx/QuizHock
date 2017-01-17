@@ -18,4 +18,6 @@
                        andAnswer:(NSString*)answer
                  andFalseAnswers:(NSArray*)falseAnswers;
 
+-(NSArray*)getAllAnswers;
+
 @end

@@ -21,9 +21,15 @@
         
         Question *q1 = [[Question alloc] initWithQuestion:@"Hur många omgångar spelas det i SHL efter övergången till 14 lag?" andAnswer:@"52" andFalseAnswers:@[@"55", @"48", @"50"]];
         
-        _questions = @[q0, q1];
+        Question *q2 = [[Question alloc] initWithQuestion:@"Hur många guld har Luleå HF tagit?" andAnswer:@"1" andFalseAnswers:@[@"2", @"3", @"4"]];
+
+        _questions = @[q0, q1, q2];
     }
     return self;
+}
+
+-(Question*)getRandomQuestion {
+    return [self.questions objectAtIndex:arc4random() % self.questions.count];
 }
 
 @end

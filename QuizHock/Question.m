@@ -22,4 +22,8 @@
     return self;
 }
 
+-(NSArray*)getAllAnswers {
+    return [@[self.answer, [self.falseAnswers objectAtIndex:0], [self.falseAnswers objectAtIndex:1], [self.falseAnswers objectAtIndex:2]] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
 @end
