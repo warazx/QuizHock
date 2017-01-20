@@ -15,9 +15,9 @@
                  andFalseAnswers:(NSArray*)falseAnswers {
     self = [super init];
     if (self) {
-        _question = question;
-        _answer = answer;
-        _falseAnswers = falseAnswers;
+        self.question = question;
+        self.answer = answer;
+        self.falseAnswers = falseAnswers;
     }
     return self;
 }

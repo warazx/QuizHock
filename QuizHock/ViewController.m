@@ -28,36 +28,51 @@
     [self generateQuestion];
 }
 
+- (void)generateQuestion {
+    self.currentQuestion = [self.currentSession objectAtIndex:0];
+    [self.currentSession removeObjectAtIndex:0];
+    [self displayQuestion];
+}
+
 - (IBAction)summitAnswer:(UIButton *)sender {
     self.player.questionsAnswered++;
     if([self.currentQuestion checkGuess:sender.titleLabel.text]) {
+        sender.backgroundColor = [UIColor greenColor];
         self.player.points++;
         self.infoLabel.text = @"Du gissade rätt!";
         self.infoLabel.textColor = [UIColor greenColor];
     } else {
+        sender.backgroundColor = [UIColor redColor];
         self.infoLabel.text = @"Du gissade fel!";
         self.infoLabel.textColor = [UIColor redColor];
+        [self highlightAnswerGreen];
     }
-    if(self.player.isGameOver) {
-        [self finishGame];
-    } else {
-        [self generateQuestion];
-    }
+    self.continueBtn.hidden = NO;
     
+    [self toggleButtons];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (void)generateQuestion {
-    if(self.currentSession.count > 0) {
-        self.currentQuestion = [self.currentSession objectAtIndex:0];
-        [self.currentSession removeObjectAtIndex:0];
-    } else {
+- (IBAction)continueGame:(UIButton *)sender {
+    [self.continueBtn setTitle:@"Ny Fråga" forState:UIControlStateNormal];
+    self.infoLabel.text = @"";
+    [self resetBtnColors];
+    if(self.currentSession.count == 0) {
         [self finishGame];
+    } else {
+        self.continueBtn.hidden = YES;
+        [self toggleButtons];
+        [self generateQuestion];
     }
-    
+}
+
+- (void)finishGame {
+    self.questionLabel.text = [NSString stringWithFormat:@"Du har svarat på %d frågor.\n Av dessa hade du %d rätt.", self.player.questionsAnswered, self.player.points];
+    [self.continueBtn setTitle:@"Ny omgång" forState:UIControlStateNormal];
+    self.currentSession = self.library.getQuestionForSession;
+    [self.player reset];
+}
+
+- (void)displayQuestion {
     self.questionLabel.text = self.currentQuestion.question;
     NSArray *answers = [self.currentQuestion getAllAnswers];
     
@@ -67,12 +82,6 @@
     [self.answer4 setTitle:[answers objectAtIndex:3] forState:UIControlStateNormal];
 }
 
-- (void)finishGame {
-    self.questionLabel.text = [NSString stringWithFormat:@"Du har svarat på %d frågor.\n Av dessa hade du %d rätt.", self.player.questionsAnswered, self.player.points];
-    self.continueBtn.hidden = NO;
-    [self toggleButtons];
-}
-
 -(void)toggleButtons {
     self.continueBtn.enabled = !self.continueBtn.enabled;
     self.answer1.enabled = !self.answer1.enabled;
@@ -80,14 +89,32 @@
     self.answer3.enabled = !self.answer3.enabled;
     self.answer4.enabled = !self.answer4.enabled;
 }
-- (IBAction)newGame:(UIButton *)sender {
-    [self toggleButtons];
-    self.currentSession = self.library.getQuestionForSession;
-    [self generateQuestion];
-    [self.player reset];
-    self.continueBtn.hidden = YES;
-    self.infoLabel.text = @"";
+
+- (void)resetBtnColors {
+    self.answer1.backgroundColor = [UIColor clearColor];
+    self.answer2.backgroundColor = [UIColor clearColor];
+    self.answer3.backgroundColor = [UIColor clearColor];
+    self.answer4.backgroundColor = [UIColor clearColor];
 }
 
+- (void)highlightAnswerGreen {
+    if([self.currentQuestion checkGuess:self.answer1.titleLabel.text]) {
+        self.answer1.backgroundColor = [UIColor greenColor];
+    }
+    else if([self.currentQuestion checkGuess:self.answer2.titleLabel.text]) {
+        self.answer2.backgroundColor = [UIColor greenColor];
+    }
+    else if([self.currentQuestion checkGuess:self.answer3.titleLabel.text]) {
+        self.answer3.backgroundColor = [UIColor greenColor];
+    }
+    else if([self.currentQuestion checkGuess:self.answer4.titleLabel.text]) {
+        self.answer4.backgroundColor = [UIColor greenColor];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

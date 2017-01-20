@@ -13,5 +13,6 @@
 
 -(Question*)getRandomQuestion;
 -(NSMutableArray*)getQuestionForSession;
+-(BOOL)isGameOver;
 
 @end

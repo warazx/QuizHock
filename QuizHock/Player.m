@@ -14,14 +14,10 @@
 {
     self = [super init];
     if (self) {
-        _points = 0;
-        _questionsAnswered = 0;
+        self.points = 0;
+        self.questionsAnswered = 0;
     }
     return self;
-}
-
--(BOOL)isGameOver {
-    return self.questionsAnswered >= 5;
 }
 
 -(void)reset {

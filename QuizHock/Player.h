@@ -12,7 +12,6 @@
 @property (nonatomic) int points;
 @property (nonatomic) int questionsAnswered;
 
--(BOOL)isGameOver;
 -(void)reset;
 
 @end

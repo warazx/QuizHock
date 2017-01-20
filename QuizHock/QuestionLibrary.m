@@ -54,13 +54,13 @@ int const GAMES_PER_SESSION = 5;
 
 -(NSMutableArray*)getQuestionForSession {
     NSMutableArray *questionArray = [[NSMutableArray alloc] initWithArray:self.questions];
-    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
-    while(returnArray.count < GAMES_PER_SESSION) {
+    NSMutableArray *sessionArray = [[NSMutableArray alloc] init];
+    while(sessionArray.count < GAMES_PER_SESSION) {
         int objectAtIndex = arc4random() % questionArray.count;
-        [returnArray addObject:[questionArray objectAtIndex:objectAtIndex]];
+        [sessionArray addObject:[questionArray objectAtIndex:objectAtIndex]];
         [questionArray removeObjectAtIndex:objectAtIndex];
     }
-    return returnArray;
+    return sessionArray;
 }
 
 @end

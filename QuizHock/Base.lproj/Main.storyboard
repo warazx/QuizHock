@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-yO-tkB">
-                                <rect key="frame" x="16" y="289" width="144" height="56"/>
+                                <rect key="frame" x="16" y="289" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer1"/>
                                 <connections>
@@ -30,23 +30,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cj-pb-m2K">
-                                <rect key="frame" x="160" y="289" width="144" height="56"/>
+                                <rect key="frame" x="162" y="289" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer2"/>
                                 <connections>
                                     <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bC2-ex-5PN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-CS-w4S">
-                                <rect key="frame" x="16" y="353" width="144" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer3"/>
-                                <connections>
-                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdk-JR-aLH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi4-Sc-gYx">
-                                <rect key="frame" x="160" y="353" width="144" height="56"/>
+                                <rect key="frame" x="162" y="353" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Answer4"/>
                                 <connections>
@@ -54,7 +46,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRf-Jz-yYT">
-                                <rect key="frame" x="16" y="166" width="288" height="115"/>
+                                <rect key="frame" x="16" y="133" width="288" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -68,22 +60,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6p-iv-52d">
-                                <rect key="frame" x="110" y="166" width="100" height="30"/>
+                                <rect key="frame" x="110" y="256" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue?"/>
+                                <state key="normal" title="Ny Fråga"/>
                                 <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVg-Aq-JZB"/>
+                                    <action selector="continueGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WUa-6k-r1c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-CS-w4S">
+                                <rect key="frame" x="16" y="353" width="142" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Answer3"/>
+                                <connections>
+                                    <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdk-JR-aLH"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.78298611111111116" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="answer1" destination="Jab-yO-tkB" id="SBS-Oe-x8O"/>
                         <outlet property="answer2" destination="6cj-pb-m2K" id="tEH-Tj-Gyq"/>
                         <outlet property="answer3" destination="MNb-CS-w4S" id="tdO-ag-UDp"/>
                         <outlet property="answer4" destination="Hi4-Sc-gYx" id="trP-46-OjF"/>
-                        <outlet property="continueBtn" destination="D6p-iv-52d" id="DbP-71-Vq3"/>
+                        <outlet property="continueBtn" destination="D6p-iv-52d" id="7AY-IC-pcB"/>
                         <outlet property="infoLabel" destination="dXN-2V-12E" id="DKk-6a-xOR"/>
                         <outlet property="questionLabel" destination="nRf-Jz-yYT" id="nZE-PP-SjO"/>
                     </connections>
