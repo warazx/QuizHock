@@ -11,8 +11,7 @@
 
 @interface QuestionLibrary : NSObject
 
-@property (strong, nonatomic) NSArray *questions;
-
 -(Question*)getRandomQuestion;
+-(NSMutableArray*)getQuestionForSession;
 
 @end

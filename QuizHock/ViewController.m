@@ -13,6 +13,7 @@
 @interface ViewController ()
 @property (strong, nonatomic) QuestionLibrary *library;
 @property (strong, nonatomic) Question *currentQuestion;
+@property (strong, nonatomic) NSMutableArray *currentSession;
 @property (strong, nonatomic) Player *player;
 
 @end
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.library = [[QuestionLibrary alloc] init];
+    self.currentSession = self.library.getQuestionForSession;
     self.player = [[Player alloc] init];
     [self generateQuestion];
 }
@@ -49,9 +51,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)generateQuestion {
-    self.currentQuestion = self.library.getRandomQuestion;
-    self.questionLabel.text = self.currentQuestion.question;
+    if(self.currentSession.count > 0) {
+        self.currentQuestion = [self.currentSession objectAtIndex:0];
+        [self.currentSession removeObjectAtIndex:0];
+    } else {
+        [self finishGame];
+    }
     
+    self.questionLabel.text = self.currentQuestion.question;
     NSArray *answers = [self.currentQuestion getAllAnswers];
     
     [self.answer1 setTitle:[answers objectAtIndex:0] forState:UIControlStateNormal];
@@ -75,6 +82,7 @@
 }
 - (IBAction)newGame:(UIButton *)sender {
     [self toggleButtons];
+    self.currentSession = self.library.getQuestionForSession;
     [self generateQuestion];
     [self.player reset];
     self.continueBtn.hidden = YES;
