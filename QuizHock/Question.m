@@ -8,6 +8,11 @@
 
 #import "Question.h"
 
+@interface Question ()
+@property (strong, nonatomic) NSArray *falseAnswers;
+@property (strong, nonatomic) NSString *answer;
+@end
+
 @implementation Question
 
 - (instancetype)initWithQuestion:(NSString*)question

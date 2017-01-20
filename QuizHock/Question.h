@@ -10,9 +10,7 @@
 
 @interface Question : NSObject
 
-@property (nonatomic) NSString *question;
-@property (nonatomic) NSString *answer;
-@property (nonatomic) NSArray *falseAnswers;
+@property (nonatomic, strong) NSString *question;
 
 - (instancetype)initWithQuestion:(NSString*)question
                        andAnswer:(NSString*)answer
