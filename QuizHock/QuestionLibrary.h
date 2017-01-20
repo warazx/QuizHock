@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Question.h"
+#import "Player.h"
 
 @interface QuestionLibrary : NSObject
+@property (strong, nonatomic) Player *player;
 
--(Question*)getRandomQuestion;
--(NSMutableArray*)getQuestionForSession;
+-(BOOL)isAnswerRight:(NSString*)answer;
+-(Question*)getQuestion;
 -(BOOL)isGameOver;
+-(void)startNewGame;
 
 @end

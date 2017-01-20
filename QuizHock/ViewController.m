@@ -8,13 +8,10 @@
 
 #import "ViewController.h"
 #import "QuestionLibrary.h"
-#import "Player.h"
 
 @interface ViewController ()
-@property (strong, nonatomic) QuestionLibrary *library;
+@property (strong, nonatomic) QuestionLibrary *gameSession;
 @property (strong, nonatomic) Question *currentQuestion;
-@property (strong, nonatomic) NSMutableArray *currentSession;
-@property (strong, nonatomic) Player *player;
 
 @end
 
@@ -22,23 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.library = [[QuestionLibrary alloc] init];
-    self.currentSession = self.library.getQuestionForSession;
-    self.player = [[Player alloc] init];
+    self.gameSession = [[QuestionLibrary alloc] init];
     [self generateQuestion];
 }
 
 - (void)generateQuestion {
-    self.currentQuestion = [self.currentSession objectAtIndex:0];
-    [self.currentSession removeObjectAtIndex:0];
+    self.currentQuestion = [self.gameSession getQuestion];
     [self displayQuestion];
 }
 
 - (IBAction)summitAnswer:(UIButton *)sender {
-    self.player.questionsAnswered++;
-    if([self.currentQuestion checkGuess:sender.titleLabel.text]) {
+    if([self.gameSession isAnswerRight:sender.titleLabel.text]) {
         sender.backgroundColor = [UIColor greenColor];
-        self.player.points++;
         self.infoLabel.text = @"Du gissade rätt!";
         self.infoLabel.textColor = [UIColor greenColor];
     } else {
@@ -56,7 +48,7 @@
     [self.continueBtn setTitle:@"Ny Fråga" forState:UIControlStateNormal];
     self.infoLabel.text = @"";
     [self resetBtnColors];
-    if(self.currentSession.count == 0) {
+    if([self.gameSession isGameOver]) {
         [self finishGame];
     } else {
         self.continueBtn.hidden = YES;
@@ -66,10 +58,9 @@
 }
 
 - (void)finishGame {
-    self.questionLabel.text = [NSString stringWithFormat:@"Du har svarat på %d frågor.\n Av dessa hade du %d rätt.", self.player.questionsAnswered, self.player.points];
+    self.questionLabel.text = [NSString stringWithFormat:@"Du har svarat på %d frågor.\n Av dessa hade du %d rätt.", self.gameSession.player.questionsAnswered, self.gameSession.player.points];
     [self.continueBtn setTitle:@"Ny omgång" forState:UIControlStateNormal];
-    self.currentSession = self.library.getQuestionForSession;
-    [self.player reset];
+    [self.gameSession startNewGame];
 }
 
 - (void)displayQuestion {
