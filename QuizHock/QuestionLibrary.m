@@ -14,7 +14,6 @@
 @interface QuestionLibrary ()
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSMutableArray *sessionQuestions;
-@property (strong, nonatomic) Question *currentQuestion;
 @end
 
 @implementation QuestionLibrary
@@ -55,10 +54,9 @@ int const GAMES_PER_SESSION = 5;
     return self;
 }
 
--(Question*)getQuestion {
+-(void)nextQuestion {
     self.currentQuestion = [self.sessionQuestions objectAtIndex:0];
     [self.sessionQuestions removeObjectAtIndex:0];
-    return self.currentQuestion;
 }
 
 -(void)assignQuestionForSession {

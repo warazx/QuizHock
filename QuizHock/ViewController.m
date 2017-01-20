@@ -11,8 +11,6 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) QuestionLibrary *gameSession;
-@property (strong, nonatomic) Question *currentQuestion;
-
 @end
 
 @implementation ViewController
@@ -24,8 +22,14 @@
 }
 
 - (void)generateQuestion {
-    self.currentQuestion = [self.gameSession getQuestion];
-    [self displayQuestion];
+    [self.gameSession nextQuestion];
+    self.questionLabel.text = self.gameSession.currentQuestion.question;
+    NSArray *answers = [self.gameSession.currentQuestion getAllAnswers];
+    
+    [self.answer1 setTitle:[answers objectAtIndex:0] forState:UIControlStateNormal];
+    [self.answer2 setTitle:[answers objectAtIndex:1] forState:UIControlStateNormal];
+    [self.answer3 setTitle:[answers objectAtIndex:2] forState:UIControlStateNormal];
+    [self.answer4 setTitle:[answers objectAtIndex:3] forState:UIControlStateNormal];
 }
 
 - (IBAction)summitAnswer:(UIButton *)sender {
@@ -63,16 +67,6 @@
     [self.gameSession startNewGame];
 }
 
-- (void)displayQuestion {
-    self.questionLabel.text = self.currentQuestion.question;
-    NSArray *answers = [self.currentQuestion getAllAnswers];
-    
-    [self.answer1 setTitle:[answers objectAtIndex:0] forState:UIControlStateNormal];
-    [self.answer2 setTitle:[answers objectAtIndex:1] forState:UIControlStateNormal];
-    [self.answer3 setTitle:[answers objectAtIndex:2] forState:UIControlStateNormal];
-    [self.answer4 setTitle:[answers objectAtIndex:3] forState:UIControlStateNormal];
-}
-
 -(void)toggleButtons {
     self.continueBtn.enabled = !self.continueBtn.enabled;
     self.answer1.enabled = !self.answer1.enabled;
@@ -89,16 +83,16 @@
 }
 
 - (void)highlightAnswerGreen {
-    if([self.currentQuestion checkGuess:self.answer1.titleLabel.text]) {
+    if([self.gameSession.currentQuestion checkGuess:self.answer1.titleLabel.text]) {
         self.answer1.backgroundColor = [UIColor greenColor];
     }
-    else if([self.currentQuestion checkGuess:self.answer2.titleLabel.text]) {
+    if([self.gameSession.currentQuestion checkGuess:self.answer2.titleLabel.text]) {
         self.answer2.backgroundColor = [UIColor greenColor];
     }
-    else if([self.currentQuestion checkGuess:self.answer3.titleLabel.text]) {
+    if([self.gameSession.currentQuestion checkGuess:self.answer3.titleLabel.text]) {
         self.answer3.backgroundColor = [UIColor greenColor];
     }
-    else if([self.currentQuestion checkGuess:self.answer4.titleLabel.text]) {
+    if([self.gameSession.currentQuestion checkGuess:self.answer4.titleLabel.text]) {
         self.answer4.backgroundColor = [UIColor greenColor];
     }
 }

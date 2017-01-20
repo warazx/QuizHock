@@ -11,10 +11,11 @@
 #import "Player.h"
 
 @interface QuestionLibrary : NSObject
+@property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) Player *player;
 
 -(BOOL)isAnswerRight:(NSString*)answer;
--(Question*)getQuestion;
+-(void)nextQuestion;
 -(BOOL)isGameOver;
 -(void)startNewGame;
 
