@@ -25,6 +25,7 @@ int const GAMES_PER_SESSION = 5;
     self = [super init];
     if (self) {
 
+        self.questions =
         Question *q0 = [[Question alloc] initWithQuestion:@"Vilket nummer hade HV71's poängkung Johan Davidsson?" andAnswer:@"76" andFalseAnswers:@[@"71", @"21", @"28"]];
         
         Question *q1 = [[Question alloc] initWithQuestion:@"Hur många omgångar spelas det i SHL efter övergången till 14 lag?" andAnswer:@"52" andFalseAnswers:@[@"55", @"48", @"50"]];
@@ -45,7 +46,7 @@ int const GAMES_PER_SESSION = 5;
         
         Question *q9 = [[Question alloc] initWithQuestion:@"Hur många spelare kan som mest få poäng vid mål?" andAnswer:@"3" andFalseAnswers:@[@"1", @"2", @"4"]];
 
-        self.questions = @[q0, q1, q2, q3, q4, q5, q6, q7, q8, q9];
+        //self.questions = @[q0, q1, q2, q3, q4, q5, q6, q7, q8, q9];
         self.player = [[Player alloc] init];
         self.currentQuestion = [[Question alloc] init];
         self.sessionQuestions = [[NSMutableArray alloc] init];

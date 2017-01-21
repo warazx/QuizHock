@@ -24,7 +24,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-yO-tkB">
                                 <rect key="frame" x="16" y="289" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer1"/>
+                                <state key="normal" title="AnswerBtn1"/>
                                 <connections>
                                     <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6SN-QF-m3R"/>
                                 </connections>
@@ -32,7 +32,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cj-pb-m2K">
                                 <rect key="frame" x="162" y="289" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer2"/>
+                                <state key="normal" title="AnswerBtn2"/>
                                 <connections>
                                     <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bC2-ex-5PN"/>
                                 </connections>
@@ -40,7 +40,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi4-Sc-gYx">
                                 <rect key="frame" x="162" y="353" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer4"/>
+                                <state key="normal" title="AnswerBtn4"/>
                                 <connections>
                                     <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1B-AW-wk2"/>
                                 </connections>
@@ -70,7 +70,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-CS-w4S">
                                 <rect key="frame" x="16" y="353" width="142" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Answer3"/>
+                                <state key="normal" title="AnswerBtn3"/>
                                 <connections>
                                     <action selector="summitAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdk-JR-aLH"/>
                                 </connections>
@@ -79,10 +79,10 @@
                         <color key="backgroundColor" red="0.78298611111111116" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="answer1" destination="Jab-yO-tkB" id="SBS-Oe-x8O"/>
-                        <outlet property="answer2" destination="6cj-pb-m2K" id="tEH-Tj-Gyq"/>
-                        <outlet property="answer3" destination="MNb-CS-w4S" id="tdO-ag-UDp"/>
-                        <outlet property="answer4" destination="Hi4-Sc-gYx" id="trP-46-OjF"/>
+                        <outlet property="answerBtn1" destination="Jab-yO-tkB" id="sAQ-1j-oNA"/>
+                        <outlet property="answerBtn2" destination="6cj-pb-m2K" id="N3t-7I-cUO"/>
+                        <outlet property="answerBtn3" destination="MNb-CS-w4S" id="MYd-Cd-GUI"/>
+                        <outlet property="answerBtn4" destination="Hi4-Sc-gYx" id="Sk0-nB-UPd"/>
                         <outlet property="continueBtn" destination="D6p-iv-52d" id="7AY-IC-pcB"/>
                         <outlet property="infoLabel" destination="dXN-2V-12E" id="DKk-6a-xOR"/>
                         <outlet property="questionLabel" destination="nRf-Jz-yYT" id="nZE-PP-SjO"/>
