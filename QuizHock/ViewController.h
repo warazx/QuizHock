@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn2;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn3;
