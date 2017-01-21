@@ -87,4 +87,8 @@ int const GAMES_PER_SESSION = 5;
     [self assignQuestionForSession];
 }
 
+-(BOOL)isAllQuestionsAnswered {
+    return self.player.questionsAnswered == GAMES_PER_SESSION;
+}
+
 @end

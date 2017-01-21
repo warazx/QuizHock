@@ -44,6 +44,9 @@
         [self highlightAnswerGreen];
     }
     self.continueBtn.hidden = NO;
+    if([self.gameSession isAllQuestionsAnswered]) {
+        [self.continueBtn setTitle:@"Resultat" forState:UIControlStateNormal];
+    }
     
     [self toggleButtons];
 }
@@ -53,11 +56,12 @@
         [self toggleAnswerButtons];
     }
     
-    [self.continueBtn setTitle:@"Ny Fråga" forState:UIControlStateNormal];
     [self resetBtnColors];
+    
     if([self.gameSession isGameOver]) {
         [self finishGame];
     } else {
+        [self.continueBtn setTitle:@"Nästa Fråga" forState:UIControlStateNormal];
         self.continueBtn.hidden = YES;
         [self toggleButtons];
         [self generateQuestion];
@@ -127,9 +131,9 @@
     [[self.answerBtn4 layer] setBorderWidth:1.0f];
     [[self.continueBtn layer] setBorderWidth:1.0f];
     
-    [[self.questionLabel layer] setBorderWidth:1.0f];
-    [[self.questionLabel layer] setCornerRadius:8.0f];
-    self.questionLabel.layer.masksToBounds = YES;
+    [[self.questionBox layer] setBorderWidth:1.0f];
+    [[self.questionBox layer] setCornerRadius:8.0f];
+    self.questionBox.layer.masksToBounds = YES;
     
     self.lightGreen = [[UIColor alloc] initWithDisplayP3Red:155/255.0 green:1 blue:155/255.0 alpha:1];
     self.lightRed = [[UIColor alloc] initWithDisplayP3Red:1 green:155/255.0 blue:155/255.0 alpha:1];

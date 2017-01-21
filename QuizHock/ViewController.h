@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn3;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn4;
 @property (weak, nonatomic) IBOutlet UIButton *continueBtn;
+@property (weak, nonatomic) IBOutlet UIView *questionBox;
 
 @end
 

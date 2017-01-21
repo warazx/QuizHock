@@ -18,5 +18,6 @@
 -(void)nextQuestion;
 -(BOOL)isGameOver;
 -(void)startNewGame;
+-(BOOL)isAllQuestionsAnswered;
 
 @end
