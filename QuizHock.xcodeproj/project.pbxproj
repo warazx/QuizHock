@@ -13,7 +13,7 @@
 		0E2A2C6F1E2E918200058C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A2C6D1E2E918200058C6B /* Main.storyboard */; };
 		0E2A2C711E2E918200058C6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A2C701E2E918200058C6B /* Assets.xcassets */; };
 		0E2A2C741E2E918200058C6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E2A2C721E2E918200058C6B /* LaunchScreen.storyboard */; };
-		0E2A2C801E2E97E600058C6B /* QuestionLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A2C7F1E2E97E600058C6B /* QuestionLibrary.m */; };
+		0E2A2C801E2E97E600058C6B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A2C7F1E2E97E600058C6B /* Game.m */; };
 		0E2A2C831E2E9CEE00058C6B /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A2C821E2E9CEE00058C6B /* Question.m */; };
 		0E2A2C861E2EC20600058C6B /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A2C851E2EC20600058C6B /* Player.m */; };
 /* End PBXBuildFile section */
@@ -29,8 +29,8 @@
 		0E2A2C701E2E918200058C6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E2A2C731E2E918200058C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E2A2C751E2E918200058C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E2A2C7E1E2E97E600058C6B /* QuestionLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionLibrary.h; sourceTree = "<group>"; };
-		0E2A2C7F1E2E97E600058C6B /* QuestionLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionLibrary.m; sourceTree = "<group>"; };
+		0E2A2C7E1E2E97E600058C6B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		0E2A2C7F1E2E97E600058C6B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		0E2A2C811E2E9CEE00058C6B /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		0E2A2C821E2E9CEE00058C6B /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		0E2A2C841E2EC20600058C6B /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 				0E2A2C681E2E918200058C6B /* AppDelegate.m */,
 				0E2A2C6A1E2E918200058C6B /* ViewController.h */,
 				0E2A2C6B1E2E918200058C6B /* ViewController.m */,
-				0E2A2C7E1E2E97E600058C6B /* QuestionLibrary.h */,
-				0E2A2C7F1E2E97E600058C6B /* QuestionLibrary.m */,
+				0E2A2C7E1E2E97E600058C6B /* Game.h */,
+				0E2A2C7F1E2E97E600058C6B /* Game.m */,
 				0E2A2C841E2EC20600058C6B /* Player.h */,
 				0E2A2C851E2EC20600058C6B /* Player.m */,
 				0E2A2C811E2E9CEE00058C6B /* Question.h */,
@@ -169,7 +169,7 @@
 				0E2A2C6C1E2E918200058C6B /* ViewController.m in Sources */,
 				0E2A2C691E2E918200058C6B /* AppDelegate.m in Sources */,
 				0E2A2C831E2E9CEE00058C6B /* Question.m in Sources */,
-				0E2A2C801E2E97E600058C6B /* QuestionLibrary.m in Sources */,
+				0E2A2C801E2E97E600058C6B /* Game.m in Sources */,
 				0E2A2C861E2EC20600058C6B /* Player.m in Sources */,
 				0E2A2C661E2E918200058C6B /* main.m in Sources */,
 			);
@@ -328,6 +328,7 @@
 				0E2A2C7A1E2E918200058C6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

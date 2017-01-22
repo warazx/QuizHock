@@ -6,17 +6,17 @@
 //  Copyright © 2017 Christian Karlsson. All rights reserved.
 //
 
-#import "QuestionLibrary.h"
+#import "Game.h"
 
 @class Question;
 @class Player;
 
-@interface QuestionLibrary ()
+@interface Game ()
 @property (strong, nonatomic) NSArray *questions;
 @property (strong, nonatomic) NSMutableArray *sessionQuestions;
 @end
 
-@implementation QuestionLibrary
+@implementation Game
 
 int const GAMES_PER_SESSION = 5;
 

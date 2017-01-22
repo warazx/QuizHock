@@ -10,7 +10,7 @@
 #import "Question.h"
 #import "Player.h"
 
-@interface QuestionLibrary : NSObject
+@interface Game : NSObject
 @property (strong, nonatomic) Question *currentQuestion;
 @property (strong, nonatomic) Player *player;
 

@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "QuestionLibrary.h"
+#import "Game.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
-@property (strong, nonatomic) QuestionLibrary *gameSession;
+@property (strong, nonatomic) Game *gameSession;
 @property (strong, nonatomic) UIColor *lightGreen;
 @property (strong, nonatomic) UIColor *lightRed;
 @end
@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initDesign];
-    self.gameSession = [[QuestionLibrary alloc] init];
+    self.gameSession = [[Game alloc] init];
     [self generateQuestion];
 }
 
